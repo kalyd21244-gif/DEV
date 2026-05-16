@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Crashing...</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000; /* خلفية سوداء */
+      color: silver;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .logo img {
+      width: 90px;
+      height: auto;
+      filter: drop-shadow(0 0 5px #555);
+    }
+    .text {
+      font-size: 52px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #666;
+      letter-spacing: 2px;
+    }
+    .counter {
+      font-size: 72px;
+      font-weight: bold;
+      text-shadow: 0 0 15px #999;
+      animation: pulse 1s infinite alternate;
+    }
+    @keyframes pulse {
+      from { transform: scale(1); color: silver; }
+      to { transform: scale(1.1); color: #ccc; }
+    }
+
+    /* نص B7T المتحرك */
+    .hacker {
+      position: absolute;
+      bottom: 40px;
+      font-size: 60px;
+      font-weight: bold;
+      color: #00ff00; /* أخضر هاكر */
+      text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+      animation: moveX 3s infinite alternate ease-in-out;
+    }
+    @keyframes moveX {
+      from { transform: translateX(-200px); }
+      to { transform: translateX(200px); }
+    }
+    .hacker a {
+      color: #00ff00;
+      text-decoration: none;
+    }
+    .hacker a:hover {
+      text-decoration: underline;
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <!-- ضع رابط اللوقو هنا -->
+  <div class="logo">
+    <img src="https://b.top4top.io/p_3568whqyf1.png" alt="Logo">
+  </div>
+
+  <div class="text">Crashing...</div>
+  <div class="counter" id="countup">0</div>
+
+  <!-- نص B7T المتحرك مع رابط -->
+  <div class="hacker">
+    <a href="https://discord.gg/" target="_blank">https://discord.gg/DEV7</a>
+  </div>
+
+  <script>
+    let count = 0;
+    const countup = document.getElementById('countup');
+
+    const timer = setInterval(() => {
+      count++;
+      countup.textContent = count;
+      if (count >= 40) {
+        clearInterval(timer);
+        countup.textContent = "انتهى!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
